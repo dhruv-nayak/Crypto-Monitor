@@ -81,6 +81,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fl1"
+        android:layout_margin="8dp"
+        android:padding="@dimen/cardview_default_radius"
         android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
@@ -194,6 +196,8 @@
         android:id="@+id/fl3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="@dimen/cardview_default_radius"
         android:layout_below="@id/card1">
 
         <TextView
@@ -222,7 +226,7 @@
         android:id="@+id/rl1"
         android:layout_below="@+id/fl3"
         android:layout_above="@+id/card2"
-        android:padding="20dp"
+        android:padding="@dimen/cardview_default_radius"
 
         android:layout_width="match_parent"
 
