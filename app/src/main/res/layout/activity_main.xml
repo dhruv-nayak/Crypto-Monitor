@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+<FrameLayout
+    android:id="@+id/li1"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="Exchanges"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="end"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/notification"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/vector"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>
+<FrameLayout
+    android:id="@+id/fl1"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/li1"
+    >
+<com.google.android.material.search.SearchBar
+    android:layout_width="233dp"
+
+    android:text="Search Crypto currency"
+    android:textAppearance="@color/filtertext"
+    android:layout_height="wrap_content"
+/>
+ <com.google.android.material.button.MaterialButton
+     android:id="@+id/filter"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     android:padding="20dp"
+     app:iconGravity="start"
+     android:text="Filter"
+     android:gravity="center"
+    android:textSize="13sp"
+     android:textColor="@color/filtertext"
+     app:iconTint="@color/filtertext"
+     app:strokeColor="@color/filtertext"
+     app:strokeWidth="1dp"
+     android:layout_gravity="end"
+     android:backgroundTint="@color/white"
+     app:icon="@drawable/filter"/>
+</FrameLayout>
+    <LinearLayout
+        android:id="@+id/li2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fl1"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="20sp"
+        android:text="Cryptocurrency"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:text="NFT"/>
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        app:cardCornerRadius="12sp"
+        android:padding="12dp"
+        android:layout_margin="12dp"
+        android:backgroundTint="@color/cardback"
+        android:background="@drawable/cardback"
+        android:layout_below="@+id/li2">
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_gravity="start"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bitcoin"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp"
+
+
+                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/symbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text=""/>
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+
+                    android:textSize="13sp"
+
+                    android:text=""/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                   android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/prize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text=""/>
+                    <TextView
+                        android:id="@+id/plusminus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text=""/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <FrameLayout
+        android:id="@+id/fl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card1">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textSize="18sp"
+            android:text="Top CryptoCyrrency"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="13sp"
+            android:text="view All "/>
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl1"
+        android:layout_below="@+id/fl3"
+        android:layout_above="@+id/card2"
+        android:padding="20dp"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card2"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12sp"
+        android:padding="@dimen/cardview_default_radius"
+        android:layout_margin="12dp"
+    android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/cardblack"
+        android:background="@drawable/cardback"
+     >
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+
+                        android:layout_gravity="center"
+                        android:src="@drawable/smile"
+                        android:text="BTC"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="Bitcoin"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/exchange"
+                        android:text="price"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="pecentage"/>
+
+
+        </LinearLayout>
+                <ImageView
+
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+
+
+                    android:layout_gravity="center"
+                    android:src="@drawable/earthp"
+                    android:text="price"/>
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:src="@drawable/launcher"
+                        android:text="price"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="pecentage"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+
+                        android:src="@drawable/wallet"
+                        android:text="price"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="wallet"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
