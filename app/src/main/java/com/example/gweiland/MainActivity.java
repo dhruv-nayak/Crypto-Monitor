@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         getdata();
         rl1 = findViewById(R.id.rl1);
         price = findViewById(R.id.prize);
@@ -100,9 +104,11 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("percent","percent"+percent);
                                 String percentString = String.valueOf(percent);
                                 bitcoinPricesUSD.add(bitcoinPriceUSD);
-                                price.setText(usd);
+                                String usdd = String.format(Locale.US, "%.2f", bitcoinPriceUSD);
+                                String percentd = String.format(Locale.US, "%.2f", percent);
+                                price.setText("$"+usdd+"USD");
                                 bname.setText(name);
-                                plusminus.setText(percentString);
+                                plusminus.setText(percentd);
 
                                 symbol.setText(symbols);
                                 cryptoAdapter = new RecyclerviewAdapter(MainActivity.this,bitcoinPricesUSD,cryptoItems,logoUrls);

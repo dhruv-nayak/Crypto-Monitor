@@ -6,5 +6,7 @@
     <color name="cardblack">#0B0B0B</color>
     <color name="filtertext">#4D0B0B0B</color>
     <color name="green">#00CE08</color>
+    <color name="red">#FF3D00</color>
+
 
 </resources>

@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +35,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     private List<ApiResponse.CryptoItem> cryptoItemList;
     private List<String> logoUrls;
+
     public RecyclerviewAdapter(Activity activity,List<Double> bitcoinPricesUSD , List<CryptocurrencyResponse.CryptoItem> cryptoItems,
                                List<String> logoUrls)
 
@@ -58,6 +60,55 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     public void onBindViewHolder(@NonNull RecyclerviewAdapter.ViewHolder holder, int position) {
 
         CryptocurrencyResponse.CryptoItem cryptoItem = cryptoItems.get(position);
+
+        Collections.sort(cryptoItems, new Comparator<CryptocurrencyResponse.CryptoItem>() {
+            @Override
+            public int compare(CryptocurrencyResponse.CryptoItem cryptoItem1, CryptocurrencyResponse.CryptoItem cryptoItem2) {
+                double price1 =  cryptoItem1.getQuote().getUSD().getPrice();
+                double price2 = cryptoItem2.getQuote().getUSD().getPrice();
+
+                // For descending order, use marketCap2 - marketCap1
+                if ( price2 > price1){
+
+
+                    int imageDrawableResId =R.drawable.positive;
+
+
+                    holder.imageView.setImageResource(imageDrawableResId);
+                }else {
+                    int imageDrawableResId =R.drawable.negative;
+
+
+                    holder.imageView.setImageResource(imageDrawableResId);
+                }
+                return Double.compare(price2, price1);
+            }
+        });
+
+        Collections.sort(cryptoItems, new Comparator<CryptocurrencyResponse.CryptoItem>() {
+            @Override
+            public int compare(CryptocurrencyResponse.CryptoItem cryptoItem1, CryptocurrencyResponse.CryptoItem cryptoItem2) {
+                double price1 =  cryptoItem1.getQuote().getUSD().getPercent_change_24h();
+                double price2 = cryptoItem2.getQuote().getUSD().getPercent_change_24h();
+
+                // For descending order, use marketCap2 - marketCap1
+                if ( price2 > price1){
+
+
+
+                    int colorgreen = ContextCompat.getColor(activity, R.color.green);
+
+                    holder.plusminus.setTextColor(colorgreen);
+
+                }else {
+                    int colorred = ContextCompat.getColor(activity, R.color.red);
+
+
+                    holder.plusminus.setTextColor(colorred);
+                }
+                return Double.compare(price2, price1);
+            }
+        });
         Collections.sort(cryptoItems, new Comparator<CryptocurrencyResponse.CryptoItem>() {
             @Override
             public int compare(CryptocurrencyResponse.CryptoItem cryptoItem1, CryptocurrencyResponse.CryptoItem cryptoItem2) {
@@ -78,7 +129,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
         String PercentformattedValue = String.format(Locale.US, "%.2f", percentint);
 
 
-        holder.textView.setText(priceformattedValue);
+        holder.textView.setText("$"+priceformattedValue+"USD");
         holder.acronym.setText(cryptoItem.getSymbol());
         holder.fullname.setText(cryptoItem.getName());
         holder.plusminus.setText(PercentformattedValue);
@@ -88,7 +139,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     @Override
     public int getItemCount() {
-        return 20;
+        return cryptoItems.size();
     }
 
     class ViewHolder
@@ -111,6 +162,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
             plusminus = itemView.findViewById(R.id.plusminus);
             logo = itemView.findViewById(R.id.logo);
+            imageView = itemView.findViewById(R.id.pn);
 
 
 

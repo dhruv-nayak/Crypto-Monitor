@@ -17,12 +17,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="@dimen/cardview_default_radius"
         android:textColor="@color/black"
         android:text="Exchanges"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:padding="@dimen/cardview_default_radius"
         android:orientation="horizontal">
     <ImageView
         android:layout_width="wrap_content"
@@ -61,6 +64,7 @@
      android:layout_height="match_parent"
      android:padding="20dp"
      app:iconGravity="start"
+     android:layout_margin="10dp"
      android:text="Filter"
      android:gravity="center"
     android:textSize="13sp"
@@ -81,14 +85,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="@dimen/cardview_default_radius"
         android:text="Cryptocurrency"/>
         <TextView
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:padding="@dimen/cardview_default_radius"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:text="NFT"/>
     </LinearLayout>
 
@@ -127,6 +136,7 @@
                     android:orientation="vertical">
                 <TextView
                     android:id="@+id/symbol"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
@@ -134,6 +144,7 @@
                     android:text=""/>
                 <TextView
                     android:id="@+id/name"
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -159,15 +170,18 @@
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/prize"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:text=""/>
                     <TextView
                         android:id="@+id/plusminus"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="13sp"
+                        android:textColor="@color/green"
                         android:text=""/>
                 </LinearLayout>
 
@@ -181,18 +195,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/card1">
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:textSize="18sp"
-            android:text="Top CryptoCyrrency"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:padding="@dimen/cardview_default_radius"
+            android:text="Top CryptoCurrency"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:textColor="@color/filtertext"
+            android:padding="@dimen/cardview_default_radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:gravity="center"
             android:textSize="13sp"
-            android:text="view All "/>
+            android:textStyle="bold"
+
+            android:text="View All "/>
     </FrameLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rl1"
@@ -211,7 +235,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="12sp"
         android:padding="@dimen/cardview_default_radius"
-        android:layout_margin="12dp"
+        android:layout_margin="16dp"
     android:layout_alignParentBottom="true"
         android:backgroundTint="@color/cardblack"
         android:background="@drawable/cardback"
@@ -279,7 +303,7 @@
 
 
                     android:layout_gravity="center"
-                    android:src="@drawable/earthp"
+                    android:src="@drawable/meta4"
                     android:text="price"/>
 
                 <LinearLayout
