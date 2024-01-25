@@ -32,7 +32,7 @@ public class ClientInterface {
                 .setLenient()
                 .create();
 
-        String API_URL = "https://pro-api.coinmarketcap.com/";
+        String API_URL = "your url";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
