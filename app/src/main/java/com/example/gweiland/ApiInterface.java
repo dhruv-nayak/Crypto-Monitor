@@ -6,10 +6,10 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @GET("v1/cryptocurrency/listings/latest")
+    @GET("your api path")
     Call<CryptocurrencyResponse> getCryptoData();
 
-    @GET("v2/cryptocurrency/info")
+    @GET("path")
     Call<ApiResponse> getlogo(@Query("id") int id);
 
 }
